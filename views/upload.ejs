@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %>upload</p>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+
+      Username: <input type="text" name="username">
+  
+      Password: <input type="password" name="password">
+  
+      File: <input type="file" name="files">
+  
+      <input type="submit">
+  
+  </form>
+  </body>
+</html>
