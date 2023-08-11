@@ -11,6 +11,7 @@ const bodyParser = require("body-parser")         //获取模块
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var photosRouter = require('./routes/photos');
+var rolesRouter = require('./routes/roles');
 
 var app = express();
 
@@ -23,9 +24,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressJWT({secret:config.jwtSecretKey}).unless({path:[/^\/public/]}))
+// app.use(expressJWT({secret:config.jwtSecretKey}).unless({path:[/^\/user/]}))
 app.use('/', indexRouter);
 app.use('/public',usersRouter);
+app.use('/role',rolesRouter);
 app.use(photosRouter);
 
 // catch 404 and forward to error handler
